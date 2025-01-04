@@ -151,9 +151,12 @@
   padding-right: 30px;
 }
 footer {
-  background-color: #f6f4f4d4 ;
+  background-color: #f6f4f4d4;
 }
 
 a {
   text-decoration: auto;
+}
+body {
+  background-color: #f6f4f4d4;
 }
