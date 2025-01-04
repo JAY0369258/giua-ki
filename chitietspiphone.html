@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - iPhone 16 Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        .product-detail-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            padding: 20px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-image {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn-buy {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-top: 20px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-buy:hover {
+            background: linear-gradient(45deg, #0056b3, #003f7f);
+            transform: translateY(-3px);
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            padding: 15px;
+            background: #f9f9f9;
+            border-top: 1px solid #ddd;
+        }
+
+        .feature-list {
+            margin-top: 20px;
+        }
+
+        .feature-list h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .feature-list ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        .feature-list ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+        }
+
+        .feature-list ul li:last-child {
+            border-bottom: none;
+        }
+
+        .additional-info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .additional-info h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .additional-info p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .specifications {
+            margin-top: 20px;
+        }
+
+        .specifications table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .specifications th,
+        .specifications td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .specifications th {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header data-aos="fade-down">
+        <h1>Chi tiết sản phẩm - iPhone 16 Pro</h1>
+    </header>
+    <div class="product-detail-container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-md-6 product-image" data-aos="zoom-in">
+                <img src="hinhiphone/iphone_16pro__erw9alves2qa_xlarge.png" alt="iPhone 16 Pro">
+            </div>
+            <div class="col-md-6 product-info" data-aos="fade-left">
+                <h1>iPhone 16 Pro</h1>
+                <p>
+                    iPhone 16 Pro là sản phẩm cao cấp nhất với thiết kế sang trọng, màn hình OLED Super Retina XDR 6.7
+                    inch,
+                    chip A18 Bionic mạnh mẽ, và hệ thống camera kép chuyên nghiệp.
+                </p>
+                <p class="price">28.999.000đ</p>
+                <a href="cart.html" class="btn btn-buy" data-id="iphone16pro">Mua ngay</a>
+            </div>
+        </div>
+        <div class="feature-list" data-aos="fade-right">
+            <h2>Tính năng nổi bật</h2>
+            <ul>
+                <li>Màn hình OLED Super Retina XDR 6.7 inch với độ sáng cao và màu sắc sống động.</li>
+                <li>Chip A18 Bionic với hiệu suất vượt trội và tiết kiệm năng lượng.</li>
+                <li>Hệ thống camera kép chuyên nghiệp hỗ trợ quay video 4K và chế độ ban đêm.</li>
+                <li>Khả năng kháng nước và bụi đạt chuẩn IP68, bảo vệ tốt trong mọi điều kiện.</li>
+                <li>Pin lớn với thời gian sử dụng kéo dài, hỗ trợ sạc nhanh và sạc không dây.</li>
+                <li>Tính năng bảo mật Face ID an toàn và tiện lợi.</li>
+                <li>Hỗ trợ 5G cho tốc độ kết nối siêu nhanh.</li>
+            </ul>
+        </div>
+        <div class="additional-info" data-aos="fade-up">
+            <h2>Thông tin bổ sung</h2>
+            <p>iPhone 16 Pro không chỉ mang lại trải nghiệm sử dụng mượt mà mà còn tích hợp các công nghệ hiện đại nhất.
+                Với hệ điều hành iOS mới nhất, bạn sẽ luôn được cập nhật những tính năng tiên tiến nhất. Ngoài ra, thiết
+                kế siêu bền với chất liệu thép không gỉ và kính cường lực giúp bảo vệ sản phẩm trong mọi hoàn cảnh.</p>
+        </div>
+        <div class="specifications" data-aos="zoom-in">
+            <h2>Thông số kỹ thuật</h2>
+            <table>
+                <tr>
+                    <th>Danh mục</th>
+                    <th>Chi tiết</th>
+                </tr>
+                <tr>
+                    <td>Màn hình</td>
+                    <td>OLED Super Retina XDR 6.7 inch</td>
+                </tr>
+                <tr>
+                    <td>Chip xử lý</td>
+                    <td>A18 Bionic</td>
+                </tr>
+                <tr>
+                    <td>Camera</td>
+                    <td>Camera kép 48MP, chế độ ban đêm</td>
+                </tr>
+                <tr>
+                    <td>Dung lượng pin</td>
+                    <td>5000mAh, hỗ trợ sạc nhanh</td>
+                </tr>
+                <tr>
+                    <td>Bộ nhớ trong</td>
+                    <td>128GB / 256GB / 512GB</td>
+                </tr>
+            </table>
+        </div>
+        <a href="Sanphamiphone.html" class="back-link">← Quay lại trang sản phẩm</a>
+    </div>
+    <footer data-aos="fade-up">
+        © 2025 - Cửa hàng iPhone cao cấp. All rights reserved.
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+<script>
+    // Giỏ hàng (lưu trong localStorage)
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Xử lý sự kiện click vào nút "Mua ngay"
+    document.querySelector('.btn-buy').addEventListener('click', function (event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định
+        const productId = this.getAttribute('data-id'); // Lấy ID sản phẩm
+        const productName = "iPhone 16 Pro"; // Tên sản phẩm
+        const productPrice = 28999000; // Giá sản phẩm
+
+        // Tìm xem sản phẩm đã có trong giỏ hàng chưa
+        const existingProduct = cart.find(item => item.id === productId);
+        if (existingProduct) {
+            existingProduct.quantity += 1; // Nếu đã tồn tại, tăng số lượng
+        } else {
+            cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                quantity: 1 // Số lượng mặc định
+            });
+        }
+
+        // Lưu lại giỏ hàng vào localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Thông báo cho người dùng
+        alert(`${productName} đã được thêm vào giỏ hàng!`);
+    });
+</script>
+
+
+</html>

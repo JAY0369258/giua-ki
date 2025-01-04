@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+    </head>
+
+    <body>
+        <div id="infoContent" style="text-align: center;"></div>
+
+        <script>
+            let user = JSON.parse(localStorage.getItem('user'));
+            
+            document.querySelector('#infoContent').innerHTML = `
+                <p><img src="${user.image}"/></p>
+                <p>${user.firstName}</p>
+                <p>${user.email}</p>
+                <p>${user.gender==='male'?'Nam': 'Nữ'}</p>`
+            //localStorage.removeItem('user') xóa đối tượng
+            //localStorage.clear() xóa tất cả dữ liệu
+
+            //sessionStorage.
+        </script>
+    </body>
+</html>

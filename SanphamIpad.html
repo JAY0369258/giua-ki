@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPab - Apple(VN)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* 1. Header
+/*----------------------------------------------*/
+        .site-header {
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            transition: background 0.3s ease-out;
+        }
+
+        .navbar-toggler svg.navbar-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .navbar-nav .nav-item a.nav-link {
+            color: black;
+        }
+
+        .navbar-nav .nav-item a.nav-link.active,
+        .navbar-nav .nav-item a.nav-link:focus,
+        .navbar-nav .nav-item a.nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /*------------ Offcanvas -------------- */
+        #header-nav .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        #header-nav .offcanvas.show {
+            z-index: 9999;
+            background-color: #f6f4f4d4;
+        }
+
+        #header-nav .offcanvas-end {
+            width: 500px;
+        }
+
+        .offcanvas.show .nav-item a.nav-link {
+            font-size: 2em;
+        }
+
+        .offcanvas.show .offcanvas-body .navbar-nav {
+            align-items: unset !important;
+            padding-left: 20px;
+        }
+
+        /*------------ Top User Icons -----------*/
+        .site-header .user-items svg {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 991px) {
+            #navbar .user-items {
+                display: none;
+            }
+        }
+
+        .product-section {
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .product-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .product-item {
+            text-align: center;
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            height: 100%;
+            /* Đảm bảo chiều cao đồng đều */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Phân bổ đều các phần tử */
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            object-fit: contain;
+            /* Giữ nguyên tỉ lệ hình ảnh */
+        }
+
+        .product-item h5 {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .product-item p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: auto;
+            /* Đẩy phần mô tả lên */
+        }
+
+        .btn-learn-more {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 20px;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            align-self: center;
+            /* Giữ nút ở giữa */
+        }
+
+        .color-dots {
+            margin: 10px 0;
+        }
+
+        .color-dots span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 3px;
+            border-radius: 50%;
+        }
+
+        .color-gold {
+            background: #d4af37;
+        }
+
+        .color-blue {
+            background: #007bff;
+        }
+
+        .color-pink {
+            background: #ffb6c1;
+        }
+
+        .color-gray {
+            background: #a9a9a9;
+        }
+
+        .color-black {
+            background: #000;
+        }
+
+        .icon-container {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .feature-card h5 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .battery {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* 8. Footer
+/*----------------------------------------------*/
+        /*------------ Social Icon -----------*/
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+            color: var(--light-gray-color);
+        }
+
+        .social-links svg:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links li {
+            padding-right: 30px;
+        }
+
+        body {
+            background-color: #f6f4f4d4;
+        }
+
+        .image-container {
+            overflow: hidden;
+            /* Ẩn phần hình ảnh bị tràn */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            /* Giữ tỉ lệ ảnh */
+
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <!--DAU Trang Header-->
+    <header id="header" class="site-header header-scrolled position-fixed text-black bg-light">
+        <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="123.html">
+                    <h2 class="animate__animated animate__flip">AT Apple Zone</h2>
+
+                </a>
+                <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <svg class="navbar-icon">
+                        <use xlink:href="#navbar-icon"></use>
+                    </svg>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar"
+                    aria-labelledby="bdNavbarOffcanvasLabel">
+                    <div class="offcanvas-header px-4 pb-0">
+                        <a class="navbar-brand" href="123.html">
+                            <h2 class="animate__animated animate__flip">AT Apple Zone</h2>
+                        </a>
+                        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
+                            aria-label="Close" data-bs-target="#bdNavbar"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul id="navbar"
+                            class="navbar-nav text-uppercase justify-content-end align-items-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link me-4 active" href="123.html">Trang chủ</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="Sanphamiphone.html">iphone</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="SanphamIpad.html">Ipad</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="">Watches</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="">AirPods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="https://contactretail.apple.com/Help">Blog</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-4" href="servinces.html">Hỗ Trợ</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link me-4 dropdown-toggle link-dark" data-bs-toggle="dropdown" href="#"
+                                    role="button" aria-expanded="false">Pages</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="about.html" class="dropdown-item">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html" class="dropdown-item">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop.html" class="dropdown-item">Shop</a>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html" class="dropdown-item">Cart</a>
+                                    </li>
+                                    <li>
+                                        <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    </li>
+                                    <li>
+                                        <a href="single-post.html" class="dropdown-item">Single Post</a>
+                                    </li>
+                                    <li>
+                                        <a href="single-product.html" class="dropdown-item">Single Product</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html" class="dropdown-item">Contact</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <div class="user-items ps-5">
+                                    <ul class="d-flex justify-content-end list-unstyled">
+                                        <li class="search-item pe-3">
+                                            <a href="#" class="search-button">
+                                                <div class="search">
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="pe-3">
+                                            <a href="Login.html">
+                                                <div class="user">
+                                                    <i class="fa-solid fa-user"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cart.html">
+                                                <div class="cart">
+                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="image-container">
+        <img src="hinhipad/screenshot20240507at101326am-1715092299681-1715092300960779534443.png" alt="">
+    </div>
+
+    <section class="product-section">
+        <div class="container">
+            <h1>Khám phá dòng sản phẩm.</h1>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+
+                <!-- Sản phẩm 1 -->
+                <div class="col">
+                    <div class="product-item">
+                        <img src="hinhipad/pt_ipad_pro__6bgrkek0jnm2_xlarge.png" alt="iPhone 16 Pro">
+                        <div class="color-dots">
+                            <span class="color-black"></span>
+                            <span class="color-gray"></span>
+                        </div>
+                        <h5>iPad Pro</h5>
+                        <p>Trải nghiệm iPad cực đỉnh với công nghệ tiên tiến hàng đầu.<br><b>Từ 28.999.000đ hoặc
+                                1.181.000đ/th. trong 24 tháng*</b></p>
+                        <button class="btn btn-learn-more">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="col">
+                    <div class="product-item">
+                        <img src="hinhipad/pt_ipad_air__cr381zljqdiu_xlarge.png" alt="iPhone 16">
+                        <div class="color-dots">
+                            <span class="color-blue"></span>
+                            <span class="color-gray"></span>
+                        </div>
+                        <h5>iPad Air</h5>
+                        <p>Hiệu năng mạnh mẽ trong một thiết kế mỏng nhẹ.<br><b>Từ 16.999.000đ hoặc 692.000đ/th. trong
+                                24 tháng*</b></p>
+                        <button class="btn btn-learn-more">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="col">
+                    <div class="product-item">
+                        <img src="hinhipad/pt_ipad_10th_gen__ej5p5x6yf2gm_xlarge.png" alt="iPhone 15"
+                            style="height: 310px;">
+                        <div class="color-dots">
+                            <span class="color-pink"></span>
+                            <span class="color-gray"></span>
+                            <span class="color-gold"></span>
+                        </div>
+                        <h5>iPad</h5>
+                        <p>iPad màn hình toàn phần, đầy màu sắc. Cho mọi tác vụ hàng ngày.<br><b>Từ 9.999.000đ hoặc
+                                407.000đ/th. trong 24 tháng*</b></p>
+                        <button class="btn btn-learn-more">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 4 -->
+                <div class="col">
+                    <div class="product-item">
+                        <img src="hinhipad/pt_ipad_mini__f3iy3qb50gia_xlarge.png" alt="iPhone 14"
+                            style="height: 310px;">
+                        <div class="color-dots">
+                            <span class="color-gray"></span>
+                            <span class="color-black"></span>
+                        </div>
+                        <h6 style="color: red;">Mới</h6>
+                        <h5>iPad mini</h5>
+                        <p>Trải nghiệm trọn vẹn iPad trong một thiết kế siêu gọn nhẹ.<br><b>Từ 13.999.000đ hoặc
+                                570.000đ/th. trong 24 tháng*</b></p>
+                        <button class="btn btn-learn-more">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="bi bi-cpu"></i>
+                        <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
+                    </div>
+                    <h5>13″ hoặc 11″<br>
+                        Màn hình Ultra Retina XDR4<br>
+                        Công nghệ ProMotion<br>
+                        Dải màu rộng P3<br>
+                        Tùy chọn mặt kính màn hình có cấu trúc nano<br>
+                        trên các phiên bản 1TB và 2TB</h5>
+                    <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
+                    <p>Được thiết kế cho Apple Intelligence</p>
+                    <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
+                    <p>Điều Khiển Camera</p>
+                    <img src="hinhiphone/product_tile_icon_iphone_16_camera__fbzexjpz33iy_large.png" alt="">
+                    <p><strong>Hệ thống camera kép tiến tiến</strong><br>Camera Fusion 48MP<br>Telephoto 2x<br>Camera
+                        Ultra Wide 12MP</p>
+                    <img src="hinhiphone/product_tile_icon_battery_100__den5pjokk60y_large.png" alt="">
+                    <p class="battery">Thời gian xem video lên đến 27 giờ</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="bi bi-cpu"></i>
+                        <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
+                    </div>
+                    <h5>13″ hoặc 11″<br>
+                        Màn hình Liquid Retina4<br>
+                        Dải màu rộng P3<br>
+                        Diện tích hiển thị thực tế nhỏ hơn.
+                        <h6>Khi tính theo đường chéo hình chữ nhật, iPad Air 13 inch có kích thước là 12,9 inch và iPad
+                            Air
+                            11 inch có kích thước là 10,86 inch.
+                        </h6>
+
+
+                    </h5>
+                    <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
+                    <p>Được thiết kế cho Apple Intelligence</p>
+                    <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
+                    <p>Điều Khiển Camera</p>
+                    <img src="hinhiphone/product_tile_icon_iphone_16_camera__fbzexjpz33iy_large.png" alt="">
+                    <p><strong>Hệ thống camera kép tiến tiến</strong><br>Camera Fusion 48MP<br>Telephoto 2x<br>Camera
+                        Ultra Wide 12MP</p>
+                    <img src="hinhiphone/product_tile_icon_battery_100__den5pjokk60y_large.png" alt="">
+                    <p class="battery">Thời gian xem video lên đến 27 giờ</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="bi bi-cpu"></i>
+                        <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
+                    </div>
+                    <h5>10,9″ <br>
+                        Màn hình Liquid Retina4 <br>
+                        Màu sRGB</h5>
+                    <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
+                    <p>Được thiết kế cho Apple Intelligence</p>
+                    <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
+                    <p>Điều Khiển Camera</p>
+                    <img src="hinhiphone/product_tile_icon_iphone_16_camera__fbzexjpz33iy_large.png" alt="">
+                    <p><strong>Hệ thống camera kép tiến tiến</strong><br>Camera Fusion 48MP<br>Telephoto 2x<br>Camera
+                        Ultra Wide 12MP</p>
+                    <img src="hinhiphone/product_tile_icon_battery_100__den5pjokk60y_large.png" alt="">
+                    <p class="battery">Thời gian xem video lên đến 27 giờ</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="bi bi-cpu"></i>
+                        <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
+                    </div>
+                    <h5>8,3″ <br>
+                        Màn hình Liquid Retina4 <br>
+                        Dải màu rộng P3</h5>
+                    <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
+                    <p>Được thiết kế cho Apple Intelligence</p>
+                    <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
+                    <p>Điều Khiển Camera</p>
+                    <img src="hinhiphone/product_tile_icon_iphone_16_camera__fbzexjpz33iy_large.png" alt="">
+                    <p><strong>Hệ thống camera kép tiến tiến</strong><br>Camera Fusion 48MP<br>Telephoto 2x<br>Camera
+                        Ultra Wide 12MP</p>
+                    <img src="hinhiphone/product_tile_icon_battery_100__den5pjokk60y_large.png" alt="">
+                    <p class="battery">Thời gian xem video lên đến 27 giờ</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container text-center my-5">
+        <h1 class="fw-bold">Vì sao Apple là nơi tốt nhất để mua iPhone.</h1>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-phone fs-1"></i>
+                        <h5 class="card-title mt-3">Tiết kiệm với Apple Trade In.</h5>
+                        <p class="card-text">Nhận 5.000.000đ – 22.200.000đ dưới hình thức điểm tín dụng khi bạn trao đổi
+                            iPhone 12 trở lên.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-credit-card fs-1"></i>
+                        <i class="bi bi-credit-card"></i>
+                        <h5 class="card-title mt-3">Thanh toán hàng tháng thật dễ dàng.</h5>
+                        <p class="card-text">Bao gồm lựa chọn lãi suất 0%.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-truck fs-1"></i>
+                        <h5 class="card-title mt-3">Giao hàng miễn phí.</h5>
+                        <p class="card-text">Giao hàng miễn phí thẳng đến tận nhà.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body">
+                        <i class="bi bi-chat-dots fs-1"></i>
+                        <h5 class="card-title mt-3">Mua sắm với Chuyên Gia.</h5>
+                        <p class="card-text">Chọn iPhone mới với sự hỗ trợ từ Chuyên Gia tận tâm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Cuoi Trang Footer-->
+    <footer id="footer" class="overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="footer-top-area">
+                    <div class="row d-flex flex-wrap justify-content-between">
+                        <div class="col-lg-3 col-sm-6 pb-3">
+                            <div class="footer-menu">
+                                <img src="jmef1gao-removebg-preview.png" alt="logo" width="100" height="100">
+                                <p>"Kết nối con người, thúc đẩy sáng tạo. Apple, không chỉ là sản phẩm, mà là phong cách
+                                    sống."</p>
+                                <div class="social-links">
+                                    <ul class="d-flex list-unstyled">
+                                        <li>
+                                            <a href="#">
+                                                <svg class="facebook">
+                                                    <use xlink:href="#facebook" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg class="instagram">
+                                                    <use xlink:href="#instagram" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg class="twitter">
+                                                    <use xlink:href="#twitter" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg class="linkedin">
+                                                    <use xlink:href="#linkedin" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <svg class="youtube">
+                                                    <use xlink:href="#youtube" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-sm-6 pb-3">
+                            <div class="footer-menu text-uppercase">
+                                <h5 class="widget-title pb-2">Về Apple</h5>
+                                <ul class="menu-list list-unstyled text-uppercase">
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Newsroom</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Lãnh đạo Apple</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Nhà Đầu Tư</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Đạo Đức & Quy Tắc</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Sự Kiện</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 pb-3">
+                            <div class="footer-menu text-uppercase">
+                                <h5 class="widget-title pb-2">Giá Trị Cốt Lõi</h5>
+                                <ul class="menu-list list-unstyled">
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Trợ Năng</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Môi Trường</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Quyền Riêng Tư</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Chuỗi Cung Ứng</a>
+                                    </li>
+                                    <li class="menu-item pb-2">
+                                        <a href="#">Apple Và Doanh Nghiêp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 pb-3">
+                            <div class="footer-menu contact-item">
+                                <h5 class="widget-title text-uppercase pb-2">Liên Hệ</h5>
+                                <p>Nếu bạn có bất cứ câu hỏi? <a href="mailto:">Imboss@gmail.com</a>
+                                </p>
+                                <p>Bạn Cần Hỗ Trợ. Hãy liên Hệ <a href="">+84 123 456 789</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </footer>
+    <div id="footer-bottom">
+        <div class="container">
+            <div class="row d-flex flex-wrap justify-content-between">
+                <div class="col-md-4 col-sm-6">
+                    <div class="Shipping d-flex">
+                        <p>We ship with:</p>
+                        <div class="card-wrap ps-2">
+                            <img src="images/dhl.png" alt="visa">
+                            <img src="images/shippingcard.png" alt="mastercard">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="payment-method d-flex">
+                        <p>Payment options:</p>
+                        <div class="card-wrap ps-2">
+                            <img src="images/visa.jpg" alt="visa">
+                            <img src="images/mastercard.jpg" alt="mastercard">
+                            <img src="images/paypal.jpg" alt="paypal">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="copyright">
+                        <p>© 2025 AT Apple Zone. Design by <a href="">AnhTuan</a> Distribution by <a href="">APPLEVN</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
