@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPab - Apple(VN)</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -53,10 +54,6 @@
 
         #header-nav .offcanvas-end {
             width: 500px;
-        }
-
-        .offcanvas.show .nav-item a.nav-link {
-            font-size: 2em;
         }
 
         .offcanvas.show .offcanvas-body .navbar-nav {
@@ -222,6 +219,11 @@
             /* Giữ tỉ lệ ảnh */
 
         }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #5b5b5b;
+        }
     </style>
 </head>
 
@@ -238,7 +240,7 @@
                     data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <svg class="navbar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
+                        stroke="currentColor" stroke-width="">
                         <!-- Biểu tượng SVG mới -->
                         <path
                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
@@ -267,14 +269,14 @@
                                 <a class="nav-link me-4" href="SanphamIpad.html">Ipad</a>
                             </li>
 
-                            <li class="nav-item">
+                            <li class="nav-item" hidden>
                                 <a class="nav-link me-4" href="">Watches</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" hidden>
                                 <a class="nav-link me-4" href="">AirPods</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link me-4" href="https://contactretail.apple.com/Help">Blog</a>
+                                <a class="nav-link me-4" href="https://www.apple.com/vn/services/">Blog</a>
 
                             </li>
                             <li class="nav-item">
@@ -285,6 +287,15 @@
                                     role="button" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="Login.html" class="dropdown-item">Đăng Nhập</a>
+                                    </li>
+                                    <li>
+                                        <a href="dangkytaikhoan.html" class="dropdown-item">Đăng Ký</a>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html" class="dropdown-item">Giỏ Hàng</a>
+                                    </li>
+                                    <li>
                                         <a href="about.html" class="dropdown-item">About</a>
                                     </li>
                                     <li>
@@ -292,9 +303,6 @@
                                     </li>
                                     <li>
                                         <a href="shop.html" class="dropdown-item">Shop</a>
-                                    </li>
-                                    <li>
-                                        <a href="cart.html" class="dropdown-item">Cart</a>
                                     </li>
                                     <li>
                                         <a href="checkout.html" class="dropdown-item">Checkout</a>
@@ -455,16 +463,11 @@
                         <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
                     </div>
                     <h5>13″ hoặc 11″<br>
-                        Màn hình Liquid Retina4<br>
+                        Màn hình Ultra Retina XDR4<br>
+                        Công nghệ ProMotion<br>
                         Dải màu rộng P3<br>
-                        Diện tích hiển thị thực tế nhỏ hơn.
-                        <h6>Khi tính theo đường chéo hình chữ nhật, iPad Air 13 inch có kích thước là 12,9 inch và iPad
-                            Air
-                            11 inch có kích thước là 10,86 inch.
-                        </h6>
-
-
-                    </h5>
+                        Tùy chọn mặt kính màn hình có cấu trúc nano<br>
+                        trên các phiên bản 1TB và 2TB</h5>
                     <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
                     <p>Được thiết kế cho Apple Intelligence</p>
                     <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
@@ -483,9 +486,12 @@
                         <i class="bi bi-cpu"></i>
                         <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
                     </div>
-                    <h5>10,9″ <br>
-                        Màn hình Liquid Retina4 <br>
-                        Màu sRGB</h5>
+                    <h5>13″ hoặc 11″<br>
+                        Màn hình Ultra Retina XDR4<br>
+                        Công nghệ ProMotion<br>
+                        Dải màu rộng P3<br>
+                        Tùy chọn mặt kính màn hình có cấu trúc nano<br>
+                        trên các phiên bản 1TB và 2TB</h5>
                     <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
                     <p>Được thiết kế cho Apple Intelligence</p>
                     <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
@@ -504,9 +510,12 @@
                         <i class="bi bi-cpu"></i>
                         <img src="hinhiphone/product_tile_icon_a18__bpom9lrselte_large.png" alt="">
                     </div>
-                    <h5>8,3″ <br>
-                        Màn hình Liquid Retina4 <br>
-                        Dải màu rộng P3</h5>
+                    <h5>13″ hoặc 11″<br>
+                        Màn hình Ultra Retina XDR4<br>
+                        Công nghệ ProMotion<br>
+                        Dải màu rộng P3<br>
+                        Tùy chọn mặt kính màn hình có cấu trúc nano<br>
+                        trên các phiên bản 1TB và 2TB</h5>
                     <img src="hinhiphone/product_tile_icon_apple_intelligence__cy36nscjfrma_large.png" alt="">
                     <p>Được thiết kế cho Apple Intelligence</p>
                     <img src="hinhiphone/product_tile_icon_camera_button__e83hkgwaefam_large.png" alt="">
