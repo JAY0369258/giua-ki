@@ -118,12 +118,21 @@
         }
 
         header {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: #fff;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            font-size: 1.2rem;
-            font-weight: 500;
+            font-size: 1.5rem;
+            font-weight: 600;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        header img {
+            border-radius: 5px;
         }
 
         footer {
@@ -207,8 +216,17 @@
 </head>
 
 <body>
-    <header data-aos="fade-down">
-        <h1>Chi tiết sản phẩm - iPad Pro</h1>
+    <header class="bg-primary text-white py-4">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Apple"
+                    class="me-3" style="height: 50px;">
+                <h1 class="h2 mb-0 fw-bold">Chi tiết sản phẩm - iPad Pro</h1>
+            </div>
+            <nav>
+                <a href="Sanphamiphone.html" class="btn btn-light btn-sm">← Quay lại</a>
+            </nav>
+        </div>
     </header>
     <div class="product-detail-container" data-aos="fade-up">
         <div class="row">

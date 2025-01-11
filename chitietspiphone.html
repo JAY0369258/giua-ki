@@ -124,6 +124,17 @@
             text-align: center;
             font-size: 1.2rem;
             font-weight: 500;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        header h1 {
+            text-shadow: 4px 5px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        header img {
+            border-radius: 5px;
         }
 
         footer {
@@ -207,9 +218,19 @@
 </head>
 
 <body>
-    <header data-aos="fade-down">
-        <h1>Chi tiết sản phẩm - iPhone 16 Pro</h1>
+    <header class="bg-primary text-white py-4">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Logo Apple"
+                    class="me-3" style="height: 50px;">
+                <h1 class="h2 mb-0 fw-bold">Chi tiết sản phẩm - iPhone 16 Pro</h1>
+            </div>
+            <nav>
+                <a href="Sanphamiphone.html" class="btn btn-light btn-sm">← Quay lại</a>
+            </nav>
+        </div>
     </header>
+
     <div class="product-detail-container" data-aos="fade-up">
         <div class="row">
             <div class="col-md-6 product-image" data-aos="zoom-in">
@@ -238,7 +259,7 @@
                 <li>Hỗ trợ 5G cho tốc độ kết nối siêu nhanh.</li>
             </ul>
         </div>
-        <div class="additional-info" data-aos="fade-up">
+        <div class="additional-info" data-aos="fade-up;">
             <h2>Thông tin bổ sung</h2>
             <p>iPhone 16 Pro không chỉ mang lại trải nghiệm sử dụng mượt mà mà còn tích hợp các công nghệ hiện đại nhất.
                 Với hệ điều hành iOS mới nhất, bạn sẽ luôn được cập nhật những tính năng tiên tiến nhất. Ngoài ra, thiết
